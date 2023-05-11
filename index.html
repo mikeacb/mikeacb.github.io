@@ -20,31 +20,32 @@
     <main>
         <div class="container">
             <section class="text-container__area">
-                <textarea name="text" id="text" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
+                <textarea name="text" id="textoOriginal" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
                 <div class="text-container__info">
                     <img src="./img/info.png" alt="info"><p>Solo letras minúsculas y sin acentos</p>
                 </div>
             </section>
             <section class="buttons-container">
-                <form action="/">
-                    <input type="button" value="Encriptar" class="btn encrypt-btn">
-                    <input type="button" value="Desencriptar" class="btn dencrypt-btn">
+                <form action="/" method="post" autocomplete="off">
+                    <input type="button" value="Encriptar" class="btn encrypt-btn" onclick="encriptarTexto()">
+                    <input type="button" value="Desencriptar" class="btn dencrypt-btn" onclick="desencriptarTexto()">
                 </form>
             </section>
         </div>
         <div class="result-container">
             <figure>
-                <img src="./img/result-img.png" alt="Imágen del resultado">
+                <img src="./img/result-img.png" alt="Imágen del resultado" id="imgNoEncontrado">
             </figure>
-            <h1>Ningún mensaje fue encontrado</h1>
-            <p>Ingrese antes el texto que desea encriptar o desencriptar</p>
+            <h1 id="msjNoEncontrado">Ningún mensaje fue encontrado</h1>
+            <p id="textoResultado">Ingrese antes el texto que desea encriptar o desencriptar</p>
             <form action="/">
-                <input type="button" value="Copiar" class="copy-btn">
+                <input type="button" value="Copiar" class="copy-btn" id="copyButton" onclick="copiarTexto()">
             </form>
         </div>
     </main>
     <foote class="footer">
         <p>@mikeacb</p>
     </footer>
+    <script src="index.js"></script>
 </body>
 </html>
