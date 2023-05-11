@@ -44,6 +44,10 @@ function encriptarTexto() {
     var texto = resultado.textContent;
     navigator.clipboard.writeText(texto).then(function () {
       alert("Texto copiado con éxito");
+      document.getElementById("imgNoEncontrado").hidden = false;
+      document.getElementById("msjNoEncontrado").hidden = false;
+      document.getElementById("copyButton").hidden = true;
+      resultado.innerText = "Ingrese antes el texto que desea encriptar o desencriptar";
     }).catch( function(error) {
       console.error("Error al copiar el texto: ", error)
     });
